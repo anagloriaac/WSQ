@@ -1,19 +1,19 @@
 #include <iostream>
 #include "BigIntegerLibrary.hh"
-#include <string>
 using namespace std;
 
 BigInteger fac (BigInteger n) {
   if (n==0) {
-    return 1;
+  cout << "sorry, it's 0" << endl;
   }
   else {
     if (n<0) {
-      return -1;
-    }
+      cout << "sorry, it's not positive" << endl;
+    } else {
     return n*fac(n-1);
   }
-}
+  }
+  }
 
 int main (){
 BigInteger x;
@@ -22,7 +22,7 @@ string y;
   cout << "Please tell me a positive integer: " << endl;
   cin>>x;
 
-  cout << "The factorial of the number is "<< fact (x) << endl;
+  cout << "The factorial of the number is "<< fac (x) << endl;
 
   cout << "Wanna try another number?" << endl;
   cin>> y;
