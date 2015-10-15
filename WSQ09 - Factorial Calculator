@@ -1,36 +1,38 @@
 #include <iostream>
-#include "BigIntegerLibrary.hh"
 using namespace std;
 
-BigInteger fac (BigInteger n) {
-  if (n==0) {
-  cout << "sorry, it's 0" << endl;
+int main () {
+
+  long n;
+  long fac=1;
+  char y;
+
+  cout << "Pls enter a positive integer: " << endl;
+  cin >>n;
+
+  for (int i=1;i<=n; i++) {
+    fac=i*fac;
+  }
+
+  cout << "The factorial of the number is: " << fac << endl;
+  cout << "Wanna try again (y/n)";
+  cin >> y;
+
+  if (y=='n') {
+    cout << "Have a nice day!!!";
   }
   else {
-    if (n<0) {
-      cout << "sorry, it's not positive" << endl;
-    } else {
-    return n*fac(n-1);
+    while (y== 'y') {
+      long n;
+      long fac=1;
+
+      cin >>n;
+      for (int i=1;i<=n; i++) {
+        fac=i*fac;
+      }
+      cout << "The factorial of the number is: " << fac << endl;
+
+    }
   }
-  }
-  }
-
-int main (){
-BigInteger x;
-string y;
-
-  cout << "Please tell me a positive integer: " << endl;
-  cin>>x;
-
-  cout << "The factorial of the number is "<< fac (x) << endl;
-
-  cout << "Wanna try another number?" << endl;
-  cin>> y;
-
-while (y == "yes") {
-if (y== "no") {
-  cout << "Have a nice day!!!" << endl;
-}
-return 0;
-}
+  return 0;
 }
