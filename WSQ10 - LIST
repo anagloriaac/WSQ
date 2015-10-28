@@ -1,0 +1,60 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+
+int main(){
+ float list [10];
+  cout << "Please write a number: " ;
+  cin >> list[0];
+
+  cout << "Please write another: ";
+  cin >> list[1];
+
+  cout << "Please write another: ";
+  cin >> list[2];
+
+  cout << "Please write another: ";
+  cin >> list[3];
+
+  cout << "Please write another: ";
+  cin >> list[4];
+
+  cout << "Please write a number: " ;
+  cin >> list[5];
+
+  cout << "Please write another: ";
+  cin >> list[6];
+
+  cout << "Please write another: ";
+  cin >> list[7];
+
+  cout << "Please write another: ";
+  cin >> list[8];
+
+  cout << "Please write another: ";
+  cin >> list[9];
+
+
+float sum=0;
+for(int i= 0; i<10; i++){
+sum = sum + list[i];
+}
+
+float prom= sum/10;
+
+float sd=0;
+for(int i= 0; i<10; i++){
+  sd= sd + ((list[i]- prom)* (list[i]-prom));
+}
+sd= sd/9;
+sd= sqrt(sd);
+
+
+
+cout << "The sum is: " << sum << endl;
+cout << "The average is: " << prom  << endl;
+cout << "The standard deviation is: " << sd;
+
+return 0;
+}
