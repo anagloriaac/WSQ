@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+
+float sr (float a){
+
+  float x=a, y=1, z=0.000001;
+
+  while (x-y>z){
+    x=(x+y)/2;
+    y=a/x;
+  }
+  return x;
+}
+
+int main(){
+
+int n;
+
+
+cout << "Write the number you want to get the square root of: " << endl;
+cin >> n;
+
+cout << "The square root is: "<< sr (n) << endl;
+
+return 0;
+
+}
