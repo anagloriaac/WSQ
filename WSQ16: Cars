@@ -1,0 +1,46 @@
+#include <iostream>
+#include <fstream>
+#include <sstream>
+#include <string>
+using namespace std;
+
+int main (){
+  string read, midprice,citympg, highmpg;
+float c, avg_c=0.0,h,avg_h=0.0,p,avg_p=0.0;
+
+ifstream read_file("93cars.dat.txt");
+  if (read_file.is_open()){
+
+    for (int i=0;i<93;i++){
+        getline(read_file, read);
+        midprice = read.substr(42,4);
+        istringstream buffer(midprice);
+        buffer>>p;
+        cmpg = read.substr(52,2);
+        istringstream buffer2(cmpg);
+        buffer2>>c;
+        highmpg = read.substr(55,2);
+        istringstream buffer3(hmpg);
+        buffer3>>h;
+        avg_h = avg_h + h;
+        avg_p = avg_p + p;
+        avg_c = avg_c + c;
+        getline(read_file, read);
+    }
+    read_file.close();
+
+  }
+  else{
+    cout << "The file can't be openend" << endl;
+  }
+
+  avg_p = avg_p/93;
+  avg_c = avg_c/93;
+  avg_h = avg_h/93;
+
+  cout << "The average midprice is: " << avg_f << endl;
+  cout << "The average city mpg is: " << avg_c << endl;
+  cout << "The average highway mpg is: " << avg_h << endl;
+
+  return 0;
+}
